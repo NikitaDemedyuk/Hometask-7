@@ -21,13 +21,17 @@ public class Main extends Thread {
                     System.out.println("\n");
             }
 
+            System.out.println(array.size());
+
             System.out.println("Sort array:\n1 - Sort in descending order (by value)\n2 - Sort in ascending order(by value)\n3 - Sort in descending order (by number of elements)\n4 - Sort in ascending order(by number of elements)");
-            System.out.println("Enter: ");
+            System.out.print("Enter: ");
             int typeSort = in.nextInt();
 
             TypeOfSort sortArray = new TypeOfSort(typeSort);
             sortArray.start();
-            sortArray.run(array);
+            sortArray.MySort(array);
+
+            printArray(array);
 
         }
     }
