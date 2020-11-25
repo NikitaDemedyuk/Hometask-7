@@ -9,7 +9,7 @@ class CompareByValue implements Comparator<Integer> {
 
     @Override
     public int compare(Integer value1, Integer value2) {
-        return value1.compareTo(value1);
+        return value1.compareTo(value2);
 
         // result > 0 - value1 > value2
         // result < 0 - value1 < value 2

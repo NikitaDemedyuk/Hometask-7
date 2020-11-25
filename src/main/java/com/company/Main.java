@@ -21,8 +21,6 @@ public class Main extends Thread {
                     System.out.println("\n");
             }
 
-            System.out.println(array.size());
-
             System.out.println("Sort array:\n1 - Sort in descending order (by value)\n2 - Sort in ascending order(by value)\n3 - Sort in descending order (by number of elements)\n4 - Sort in ascending order(by number of elements)");
             System.out.print("Enter: ");
             int typeSort = in.nextInt();
@@ -32,7 +30,9 @@ public class Main extends Thread {
             sortArray.MySort(array);
 
             printArray(array);
-
+        }
+        catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
         }
     }
 
@@ -51,40 +51,7 @@ public class Main extends Thread {
         }
     }
 }
-            /*public class Main extends Thread {
-                private int sizeArray;
-                private int typeOfSort;
 
-                Main() {
-                    sizeArray = 0;
-                    typeOfSort = 1;
-                }
-
-                Main(int sizeArrayNow, int typeOfSortNow) {
-                    sizeArray = sizeArrayNow;
-                    typeOfSort = typeOfSortNow;
-                }
-
-                @Override
-                public void run() {
-                    System.out.println("thread main is running");
-                    List<Integer> randomArray = new ArrayList<>();
-                    for (int i = 0; i < sizeArray; i++) {
-                        randomArray.add((int) (Math.random() * 30) - 15);
-                    }
-                    for (int i = 0; i < randomArray.size(); ++i) {
-                        System.out.print(randomArray.get(i) + " ");
-                    }
-
-                    TypeOfSort sort = new TypeOfSort(typeOfSort);
-                    sort.run(randomArray);
-                    System.out.println();
-                    for (int i : randomArray) {
-                        System.out.print(i + " ");
-                    }
-                }
-            }
-          */
 
 
 

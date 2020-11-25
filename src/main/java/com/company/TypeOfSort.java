@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 import static java.sql.Types.NULL;
-//import javafx.application.Application;
+
 
 
 public class TypeOfSort extends Thread{
@@ -19,10 +19,6 @@ public class TypeOfSort extends Thread{
             case 1 -> {
                 Comparator comparator1 = new CompareByValue();
                 Collections.sort(randomArray, comparator1);
-
-                for (int i = 0; i < 5; ++i) {
-                    System.out.print(randomArray.get(i) + " ");
-                }
             }
 
             case 2 -> {
@@ -32,13 +28,11 @@ public class TypeOfSort extends Thread{
                 for (int i = 0; i < randomArray.size(); ++i) {
                     randomArray.set(i, randomArrayInverse1.get(randomArray.size() - i - 1));
                 }
-
             }
 
             case 3 -> {
                 Comparator comparator3 = new CompareByNumberOfElements();
                 Collections.sort(randomArray, comparator3);
-
             }
 
             case 4 -> {
@@ -48,7 +42,6 @@ public class TypeOfSort extends Thread{
                 for (int i = 0; i < randomArray.size(); i++) {
                     randomArray.set(i, randomArrayInverse2.get(randomArray.size() - i - 1));
                 }
-
             }
         }
         return randomArray;
