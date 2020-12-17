@@ -15,10 +15,9 @@ public class Main extends Thread {
             System.out.println("Do you want to see your array?\n1 - See\n2 - Skip");
             System.out.print("Enter: ");
             int variantSee = in.nextInt();
-            switch (variantSee) {
-                case 1:
-                    printArray(array);
-                    System.out.println("\n");
+            if (variantSee == 1) {
+                printArray(array);
+                System.out.println("\n");
             }
 
             System.out.println("Sort array:\n1 - Sort in descending order (by value)\n2 - Sort in ascending order(by value)\n3 - Sort in descending order (by number of elements)\n4 - Sort in ascending order(by number of elements)");
@@ -28,6 +27,7 @@ public class Main extends Thread {
             TypeOfSort sortArray = new TypeOfSort(typeSort);
             sortArray.start();
             sortArray.MySort(array);
+            sortArray.join();
 
             printArray(array);
         }
@@ -38,17 +38,18 @@ public class Main extends Thread {
 
     public static List<Integer> createRandomArray(int lengthArray) {
         List<Integer> array = new ArrayList<>();
-        for (int i = 0; i < lengthArray; i++) {
+        for (int i = 0; i < lengthArray; ++i) {
             array.add((int) (Math.random() * 30) - 15);
         }
         return array;
     }
 
     public static void printArray(List<Integer> array) {
-        System.out.println("Your array:");
-        for (int i = 0; i < array.size(); ++i) {
-            System.out.print(array.get(i) + " ");
+        System.out.println("-----------------------------------------\nYour array:");
+        for (Integer integer : array) {
+            System.out.print(integer + " ");
         }
+        System.out.println("\n-------------------------------------------------");
     }
 }
 
