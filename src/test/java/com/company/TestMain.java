@@ -39,10 +39,9 @@ public class TestMain {
         sortArray.join();
 
         for (int i = 0; i < 10; ++i) {
-
+            if (arrayInteger.get(i) == arrayIntegerTest.get(i)) {
+                System.out.println("Good");
+            }
         }
-
-
-
     }
 }
